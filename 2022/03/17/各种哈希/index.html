@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cqupthaopp.github.io">
-  <title>KMP | Hao_pp的博客</title>
+  <title>各种哈希 | Hao_pp的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="KMP专题集合：记录KMP相关算法题目">
+  <meta name="description" content="关于哈希算法  我们将一组数据hash成一个唯一的数值，方便进行查询。例如拥有k种字符的字符串我们可以看成一个k进制的数每位可以表示k种状态。因为hash到的值可能很大所以我们一般会进行取模，MOD值尽量使用质数在特殊情况可以很好的防止哈希碰撞。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KMP">
-<meta property="og:url" content="https://cqupthaopp.github.io/2022/03/16/KMP/index.html">
+<meta property="og:title" content="各种哈希">
+<meta property="og:url" content="https://cqupthaopp.github.io/2022/03/17/%E5%90%84%E7%A7%8D%E5%93%88%E5%B8%8C/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
-<meta property="og:description" content="KMP专题集合：记录KMP相关算法题目">
+<meta property="og:description" content="关于哈希算法  我们将一组数据hash成一个唯一的数值，方便进行查询。例如拥有k种字符的字符串我们可以看成一个k进制的数每位可以表示k种状态。因为hash到的值可能很大所以我们一般会进行取模，MOD值尽量使用质数在特殊情况可以很好的防止哈希碰撞。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-16T05:40:11.000Z">
-<meta property="article:modified_time" content="2022-03-16T06:40:06.070Z">
+<meta property="article:published_time" content="2022-03-17T06:08:06.000Z">
+<meta property="article:modified_time" content="2022-03-17T06:15:20.350Z">
 <meta property="article:author" content="Hao_pp">
-<meta property="article:tag" content="KMP">
+<meta property="article:tag" content="hash">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hao_pp的博客" type="application/atom+xml">
@@ -208,22 +208,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-KMP" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-各种哈希" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      KMP
+      各种哈希
     </h1>
   
 
 
   
   
-<a href="/2022/03/16/KMP/" class="archive-article-date">
-        <time datetime="2022-03-16T05:40:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-16</time>
+<a href="/2022/03/17/%E5%90%84%E7%A7%8D%E5%93%88%E5%B8%8C/" class="archive-article-date">
+        <time datetime="2022-03-17T06:08:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-17</time>
 </a>
 
   
@@ -236,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">208字</span>
+      <span class="post-count">483字</span>
     </span>
   </span>
 
@@ -245,7 +245,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -256,16 +256,12 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="KMP专题集合："><a href="#KMP专题集合：" class="headerlink" title="KMP专题集合："></a>KMP专题集合：</h4><p>记录KMP相关算法题目</p>
+    <h3 id="关于哈希算法"><a href="#关于哈希算法" class="headerlink" title="关于哈希算法"></a>关于哈希算法</h3><p>  我们将一组数据hash成一个唯一的数值，方便进行查询。例如拥有k种字符的字符串我们可以看成一个k进制的数每位可以表示k种状态。因为hash到的值可能很大所以我们一般会进行取模，MOD值尽量使用质数在特殊情况可以很好的防止哈希碰撞。</p>
 <span id="more"></span>
 
-
-
-<p>KMP入门：ACWING 141.周期</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/143/">原题链接</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> Next[ <span class="number">1000005</span> ];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getNext</span><span class="params">( string str )</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    Next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> k = <span class="number">-1</span>;<span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>( j &lt; str.<span class="built_in">length</span>() )&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ( k == <span class="number">-1</span> || str[k] == str[j] )&#123;</span><br><span class="line">            k++;j++;</span><br><span class="line">            Next[j] = k;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">            k = Next[k];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//  for ( int k = 0 ; k &lt;= str.length() ; k++ )</span></span><br><span class="line"><span class="comment">//      cout&lt;&lt;k&lt;&lt;&quot; &quot;&lt;&lt;Next[k]&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>( <span class="literal">false</span> );</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;string str;<span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>( cin&gt;&gt;n &amp;&amp; n )&#123;</span><br><span class="line"></span><br><span class="line">        cin&gt;&gt;str;</span><br><span class="line"></span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;Test case #&quot;</span>&lt;&lt;++t&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">getNext</span>( str );</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt; n ; k++ )&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ( Next[k+<span class="number">1</span>] == <span class="number">0</span> )   <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ( Next[k+<span class="number">1</span>] * <span class="number">2</span> &lt; k + <span class="number">1</span> )    <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ( (k+<span class="number">1</span>)%((k+<span class="number">1</span>)-Next[k+<span class="number">1</span>]) != <span class="number">0</span>)  <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            cout&lt;&lt;k+<span class="number">1</span>&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;(k+<span class="number">1</span>)/((k+<span class="number">1</span>)-Next[k+<span class="number">1</span>])&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<p>例题1 POJ3349 ACWING 137 <a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/139/">原题链接</a></p>
+<p>这里我们很难处理哈希碰撞，所以我们将所有数之和与之积加起来作为hash值，这样可以保证数列相同的在一个head然后再进行判断是不是同一个雪花</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MOD = <span class="number">1433227</span>;</span><br><span class="line"><span class="type">int</span> snow[<span class="number">100010</span>][<span class="number">6</span>];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; head[ MOD ];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Hash</span><span class="params">( <span class="type">int</span> n )</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> sum = <span class="number">0</span>;<span class="type">int</span> mulit = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; <span class="number">6</span> ; k++ )&#123;</span><br><span class="line">		</span><br><span class="line">		sum += snow[n][k];sum %= MOD;</span><br><span class="line">		mulit*=snow[n][k];mulit%=MOD;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	head[ ( sum + mulit )%MOD ].<span class="built_in">push_back</span>( n );</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">( <span class="type">int</span> a , <span class="type">int</span> b )</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// snow[a] , snow[b]</span></span><br><span class="line">	<span class="type">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; <span class="number">6</span> ; k++ )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( snow[a][k] != snow[b][<span class="number">0</span>] )	<span class="keyword">continue</span>;</span><br><span class="line">		flag = <span class="literal">true</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> loca = k , locb = <span class="number">0</span> ;  locb &lt; <span class="number">6</span> ; )&#123;</span><br><span class="line">			<span class="keyword">if</span> ( snow[a][loca] != snow[b][locb] )&#123;</span><br><span class="line">				flag = <span class="literal">false</span>;<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			loca++;locb++;</span><br><span class="line">			loca %= <span class="number">6</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( flag )	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	flag = <span class="literal">true</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; <span class="number">6</span> ; k++ )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( snow[a][k] != snow[b][<span class="number">5</span>] )	<span class="keyword">continue</span>;</span><br><span class="line">		flag = <span class="literal">true</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> loca = k , locb = <span class="number">5</span> ;  locb &gt;= <span class="number">0</span> ; )&#123;</span><br><span class="line">			<span class="keyword">if</span> ( snow[a][loca] != snow[b][locb] )&#123;</span><br><span class="line">				flag = <span class="literal">false</span>;<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			loca++;locb--;</span><br><span class="line">			loca %= <span class="number">6</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( flag )	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>) -&gt; ios_base::<span class="built_in">sync_with_stdio</span>( <span class="literal">false</span> );</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n;cin&gt;&gt;n;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n ; k++ )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">6</span> ; i++ )	cin&gt;&gt;snow[k][i];</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">Hash</span>( k );</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; MOD ; k++ )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( flag )	<span class="keyword">continue</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; head[k].<span class="built_in">size</span>() ; i++ )</span><br><span class="line">			<span class="keyword">for</span> ( <span class="type">int</span> j = i + <span class="number">1</span> ; j &lt; head[k].<span class="built_in">size</span>() ; j++ )</span><br><span class="line">				<span class="keyword">if</span> ( <span class="built_in">cmp</span>( head[k][i] , head[k][j] ) )</span><br><span class="line">					flag = <span class="literal">true</span>;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> ( flag )	cout&lt;&lt;<span class="string">&quot;Twin snowflakes found.&quot;</span>&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">else</span>		cout&lt;&lt;<span class="string">&quot;No two snowflakes are alike.&quot;</span>&lt;&lt;endl;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
     
@@ -281,7 +277,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://cqupthaopp.github.io/2022/03/16/KMP/" title="KMP" target="_blank">https://cqupthaopp.github.io/2022/03/16/KMP/</a>
+          <a href="https://cqupthaopp.github.io/2022/03/17/各种哈希/" title="各种哈希" target="_blank">https://cqupthaopp.github.io/2022/03/17/各种哈希/</a>
         </li>
         
         <li>
@@ -303,7 +299,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">KMP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hash</a>
         		</li>
       		
 		</ul>
@@ -359,7 +355,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2022/03/16/KMP/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2022/03/17/%E5%90%84%E7%A7%8D%E5%93%88%E5%B8%8C/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -374,18 +370,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/03/17/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          字符串的最小表示法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/03/15/New-Post/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">New Post</div>
+    <a href="/2022/03/17/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字符串的最小表示法</div>
       <i class="icon-circle-right"></i>
     </a>
   
