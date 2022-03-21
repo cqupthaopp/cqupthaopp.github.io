@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cqupthaopp.github.io">
-  <title>CF | Hao_pp的博客</title>
+  <title>CF#778 | Hao_pp的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="CF">
+  <meta name="description" content="C： 简单题，有一个很关键的点是用stack而不是queue，因为如果用queue就相当于bfs地搜索这棵树，内存会炸。而stack是dfs地搜索，搜完了就会删除。希望吸取教训，以后打cf能够静下心来。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF#778">
 <meta property="og:url" content="https://cqupthaopp.github.io/2022/03/20/CF#778/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
+<meta property="og:description" content="C： 简单题，有一个很关键的点是用stack而不是queue，因为如果用queue就相当于bfs地搜索这棵树，内存会炸。而stack是dfs地搜索，搜完了就会删除。希望吸取教训，以后打cf能够静下心来。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-20T14:06:44.000Z">
-<meta property="article:modified_time" content="2022-03-20T14:06:44.377Z">
+<meta property="article:modified_time" content="2022-03-21T08:52:33.533Z">
 <meta property="article:author" content="Hao_pp">
+<meta property="article:tag" content="codeforces">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hao_pp的博客" type="application/atom+xml">
@@ -212,7 +215,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      CF
+      CF#778
     </h1>
   
 
@@ -233,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
+      <span class="post-count">267字</span>
     </span>
   </span>
 
@@ -253,7 +256,13 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <p>C： 简单题，有一个很关键的点是用stack而不是queue，因为如果用queue就相当于bfs地搜索这棵树，内存会炸。而stack是dfs地搜索，搜完了就会删除。希望吸取教训，以后打cf能够静下心来。</p>
+<span id="more"></span>
+
+<p>题意是给你一个数组是n个蛋糕的大小，判断他们能不能由一个大蛋糕二分分出来。<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1654/problem/C">原题链接</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n;<span class="type">int</span> sum = <span class="number">0</span>;<span class="type">int</span> num;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">	</span><br><span class="line">	map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; flag;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n ; k++ )&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;num);</span><br><span class="line">		sum += num;</span><br><span class="line">		flag[num]++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> ( n == <span class="number">1</span> )&#123;</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;YES&quot;</span>&lt;&lt;endl;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	stack&lt;<span class="type">int</span>&gt; qu;</span><br><span class="line">	qu.<span class="built_in">push</span>( sum );</span><br><span class="line">	</span><br><span class="line">	<span class="type">bool</span> f = <span class="literal">true</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( qu.<span class="built_in">size</span>() )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> now = qu.<span class="built_in">top</span>();qu.<span class="built_in">pop</span>();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( flag[now] &gt;= <span class="number">1</span> )&#123;</span><br><span class="line">			flag[now]--;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> ( flag[now] == <span class="number">0</span> ) flag.<span class="built_in">erase</span>( now );</span><br><span class="line">			</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> ( now != <span class="number">1</span> )&#123;</span><br><span class="line">				qu.<span class="built_in">push</span>( now/<span class="number">2</span> );</span><br><span class="line">				qu.<span class="built_in">push</span>( (now+<span class="number">1</span>)/<span class="number">2</span> );</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			cout&lt;&lt;<span class="string">&quot;NO&quot;</span>&lt;&lt;endl;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;YES&quot;</span>&lt;&lt;endl;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> t;cin &gt;&gt; t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( t-- )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
     
 
     
@@ -267,7 +276,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://cqupthaopp.github.io/2022/03/20/CF#778/" title="CF" target="_blank">https://cqupthaopp.github.io/2022/03/20/CF#778/</a>
+          <a href="https://cqupthaopp.github.io/2022/03/20/CF#778/" title="CF#778" target="_blank">https://cqupthaopp.github.io/2022/03/20/CF#778/</a>
         </li>
         
         <li>
@@ -284,6 +293,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -499,6 +519,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">KMP</a>
