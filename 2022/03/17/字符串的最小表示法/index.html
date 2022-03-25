@@ -10,14 +10,17 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="对于环状的数据如果我们需要判断某两个环是否相等，我们可以用最小表示法来记录再判断，即用字典序最小(或最大)的一种环表示来记录数据。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="字符串的最小表示法">
 <meta property="og:url" content="https://cqupthaopp.github.io/2022/03/17/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
+<meta property="og:description" content="对于环状的数据如果我们需要判断某两个环是否相等，我们可以用最小表示法来记录再判断，即用字典序最小(或最大)的一种环表示来记录数据。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-16T16:16:29.000Z">
-<meta property="article:modified_time" content="2022-03-16T16:16:29.777Z">
+<meta property="article:modified_time" content="2022-03-25T07:57:59.434Z">
 <meta property="article:author" content="Hao_pp">
+<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hao_pp的博客" type="application/atom+xml">
@@ -233,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
+      <span class="post-count">191字</span>
     </span>
   </span>
 
@@ -253,7 +256,13 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <p>对于环状的数据如果我们需要判断某两个环是否相等，我们可以用最小表示法来记录再判断，即用字典序最小(或最大)的一种环表示来记录数据。</p>
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1368">模板题链接</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>) -&gt; ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n;cin &gt;&gt; n;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> num[n];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n ; k++ ) cin &gt;&gt; num[k];</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> a = <span class="number">0</span>;<span class="type">int</span> b = <span class="number">1</span>;<span class="type">int</span> len = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( a &lt; n &amp;&amp; b &lt; n &amp;&amp; len &lt; n )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( num[ ( a + len ) % n ] == num[ ( b + len ) % n ] ) len++;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> ( num[ ( a + len ) % n ] &lt; num[ ( b + len ) % n ] )</span><br><span class="line">				b++;</span><br><span class="line">			<span class="keyword">else</span> a++;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> ( a == b ) b++;</span><br><span class="line">			</span><br><span class="line">			len = <span class="number">0</span>;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n ; k++ )</span><br><span class="line">		cout &lt;&lt; num[ ( a + k ) % n ] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     
 
     
@@ -284,6 +293,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -514,15 +534,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">KMP</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hash</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
             
             <div class="clearfix"></div>

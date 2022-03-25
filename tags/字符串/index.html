@@ -6,21 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cqupthaopp.github.io">
-  <title>CodeForcesRound778 | Hao_pp的博客</title>
+  <title>Tag: 字符串 | Hao_pp的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="C： 简单题，有一个很关键的点是用stack而不是queue，因为如果用queue就相当于bfs地搜索这棵树，内存会炸。而stack是dfs地搜索，搜完了就会删除。希望吸取教训，以后打cf能够静下心来。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="CodeForcesRound778">
-<meta property="og:url" content="https://cqupthaopp.github.io/2022/03/20/CodeForcesRound778/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hao_pp的博客">
+<meta property="og:url" content="https://cqupthaopp.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
-<meta property="og:description" content="C： 简单题，有一个很关键的点是用stack而不是queue，因为如果用queue就相当于bfs地搜索这棵树，内存会炸。而stack是dfs地搜索，搜完了就会删除。希望吸取教训，以后打cf能够静下心来。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-20T14:06:44.000Z">
-<meta property="article:modified_time" content="2022-03-24T03:40:26.760Z">
 <meta property="article:author" content="Hao_pp">
-<meta property="article:tag" content="codeforces">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hao_pp的博客" type="application/atom+xml">
@@ -208,218 +203,65 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CodeForcesRound778" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2022/03/17/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/" class="archive-article-date">
+        <time datetime="2022-03-16T16:16:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-17</time>
+</a>
+
+        </div>
+    	 
   
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2022/03/17/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/" target="_blank">字符串的最小表示法</a>
   
-    <h1 class="article-title" itemprop="name">
-      CodeForcesRound778
     </h1>
   
 
 
-  
-  
-<a href="/2022/03/20/CodeForcesRound778/" class="archive-article-date">
-        <time datetime="2022-03-20T14:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-20</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">785字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>C： 简单题，有一个很关键的点是用stack而不是queue，因为如果用queue就相当于bfs地搜索这棵树，内存会炸。而stack是dfs地搜索，搜完了就会删除。希望吸取教训，以后打cf能够静下心来。</p>
-<span id="more"></span>
-
-<p>题意是给你一个数组是n个蛋糕的大小，判断他们能不能由一个大蛋糕二分分出来。<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1654/problem/C">原题链接</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n;<span class="type">int</span> sum = <span class="number">0</span>;<span class="type">int</span> num;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">	</span><br><span class="line">	map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; flag;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n ; k++ )&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;num);</span><br><span class="line">		sum += num;</span><br><span class="line">		flag[num]++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> ( n == <span class="number">1</span> )&#123;</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;YES&quot;</span>&lt;&lt;endl;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	stack&lt;<span class="type">int</span>&gt; qu;</span><br><span class="line">	qu.<span class="built_in">push</span>( sum );</span><br><span class="line">	</span><br><span class="line">	<span class="type">bool</span> f = <span class="literal">true</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( qu.<span class="built_in">size</span>() )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> now = qu.<span class="built_in">top</span>();qu.<span class="built_in">pop</span>();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( flag[now] &gt;= <span class="number">1</span> )&#123;</span><br><span class="line">			flag[now]--;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> ( flag[now] == <span class="number">0</span> ) flag.<span class="built_in">erase</span>( now );</span><br><span class="line">			</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> ( now != <span class="number">1</span> )&#123;</span><br><span class="line">				qu.<span class="built_in">push</span>( now/<span class="number">2</span> );</span><br><span class="line">				qu.<span class="built_in">push</span>( (now+<span class="number">1</span>)/<span class="number">2</span> );</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			cout&lt;&lt;<span class="string">&quot;NO&quot;</span>&lt;&lt;endl;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;YES&quot;</span>&lt;&lt;endl;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> t;cin &gt;&gt; t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( t-- )&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>D，树上dfs+逆元,学习的别人的代码，</p>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1654/problem/D">原题链接</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> L(i, j, k) for(int i = (j); i &lt;= (k); ++i)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> R(i, j, k) for(int i = (j); i &gt;= (k); --i)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> vi vector <span class="string">&lt;int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sz(a) ((int) (a).size())</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> me(f, x) memset(f, x, sizeof(f))</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> uint unsigned int</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">7</span>, M = <span class="number">2e5</span>, T = N * <span class="number">20</span>, mod = <span class="number">998244353</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">qpow</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y = mod - <span class="number">2</span>)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (; y; x = (ll) x * x % mod, y &gt;&gt;= <span class="number">1</span>) <span class="keyword">if</span> (y &amp; <span class="number">1</span>) res = (ll) res * x % mod;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, hd[N];</span><br><span class="line">vi fac[M + <span class="number">7</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> mx[N], cur[N];</span><br><span class="line"><span class="type">int</span> lk[N];</span><br><span class="line"></span><br><span class="line">vector&lt;pair&lt;<span class="type">int</span>, pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt; &gt; e[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	lk[x] = <span class="number">1</span>;<span class="comment">//起点</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//fa为上一个点</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//遍历x的下一个点</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : e[x])</span><br><span class="line">		<span class="keyword">if</span> (v.first != fa) &#123;</span><br><span class="line">		<span class="comment">//防止走回去了</span></span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> a = v.second.first, b = v.second.second;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">swap</span>(a, b); <span class="comment">// x : v.first == a : b ; swap?</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">const</span> <span class="type">int</span> &amp;u : fac[a]) cur[u] -= <span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//遍历a的因数</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">const</span> <span class="type">int</span> &amp;u : fac[b]) cur[u] += <span class="number">1</span>, mx[u] = <span class="built_in">max</span>(mx[u], cur[u]);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//b的因数</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//		cout &lt;&lt; &quot;V = &quot; &lt;&lt; v.first &lt;&lt; &#x27;\n&#x27;;</span></span><br><span class="line">		</span><br><span class="line">		<span class="built_in">dfs</span>(v.first, x);</span><br><span class="line">		</span><br><span class="line">		(lk[x] += (ll) lk[v.first] * a % mod * <span class="built_in">qpow</span>(b) % mod) %= mod;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">const</span> <span class="type">int</span> &amp;u : fac[a]) cur[u] += <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">const</span> <span class="type">int</span> &amp;u : fac[b]) cur[u] -= <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//回溯</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="built_in">L</span>(i, <span class="number">1</span>, n) e[i].<span class="built_in">clear</span>(), lk[i]=mx[i] = cur[i] = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 1-&gt;n road 清空 </span></span><br><span class="line">	<span class="comment">//mx cur 初始化 0</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">L</span>(i, <span class="number">1</span>, n - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> u, v, x, y;</span><br><span class="line">		cin &gt;&gt; u &gt;&gt; v &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		e[u].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(v, <span class="built_in">make_pair</span>(x, y)));</span><br><span class="line">		e[v].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(u, <span class="built_in">make_pair</span>(y, x)));</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//存路  u -&gt; v = x : y    v - &gt; u = y : x;</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//	cout &lt;&lt; &quot;SZ = &quot; &lt;&lt; sz(e[1]) &lt;&lt; &#x27;\n&#x27;;</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> now = lk[<span class="number">1</span>];</span><br><span class="line">	<span class="comment">//cout &lt;&lt; &quot;lk = &quot; &lt;&lt; lk[1] &lt;&lt; &#x27;\n&#x27;;</span></span><br><span class="line">	<span class="built_in">L</span>(i, <span class="number">1</span>, n) <span class="built_in">L</span>(j, <span class="number">1</span>, mx[i]) now = (ll) now * i % mod;</span><br><span class="line">	cout &lt;&lt; now &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">L</span>(i, <span class="number">2</span>, M)</span><br><span class="line">		<span class="keyword">if</span> (!<span class="built_in">sz</span>(fac[i]))</span><br><span class="line">			<span class="keyword">for</span> (ll t = i; t &lt;= M; t *= i)</span><br><span class="line">				<span class="keyword">for</span> (<span class="type">int</span> j = t; j &lt;= M; j += t)</span><br><span class="line">					fac[j].<span class="built_in">push_back</span>(i);</span><br><span class="line">		</span><br><span class="line">	<span class="comment">//memory 因数 on?	</span></span><br><span class="line">		</span><br><span class="line">	<span class="type">int</span> t;</span><br><span class="line">	cin &gt;&gt; t;</span><br><span class="line">	<span class="keyword">while</span> (t--) <span class="built_in">Main</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-    
-
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          Hao_pp
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="https://cqupthaopp.github.io/2022/03/20/CodeForcesRound778/" title="CodeForcesRound778" target="_blank">https://cqupthaopp.github.io/2022/03/20/CodeForcesRound778/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
+        <div class="article-info info-on-right">
           
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
         		</li>
       		
 		</ul>
 	</div>
 
-    
+          
 
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2022/03/20/CodeForcesRound778/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          基础数论
-        
-      </div>
-    </a>
   
   
-    <a href="/2022/03/18/%E9%A9%AC%E6%8B%89%E8%BD%A6%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">马拉车算法</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
           </div>
@@ -448,9 +290,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
