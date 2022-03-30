@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cqupthaopp.github.io">
-  <title>Tag: math | Hao_pp的博客</title>
+  <title>Hao_pp的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+    
+    <!-- <meta name="keywords" content="">
+    <meta name="description" content=""> -->
+  
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hao_pp的博客">
-<meta property="og:url" content="https://cqupthaopp.github.io/tags/math/index.html">
+<meta property="og:url" content="https://cqupthaopp.github.io/page/2/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Hao_pp">
@@ -204,64 +208,101 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="archive-article-date">
-        <time datetime="2022-03-22T14:01:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
 
-        </div>
-    	 
+  
+    <article id="post-CodeForcesRound-712-Div1-A" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" target="_blank">基础数论</a>
+	  <a class="article-title" href="/2002/03/30/CodeForcesRound-712-Div1-A/" target="_blank">CodeForcesRound#712(Div1)A</a>
   
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+<a href="/2002/03/30/CodeForcesRound-712-Div1-A/" class="archive-article-date">
+        <time datetime="2002-03-30T14:46:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-03-30</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>CodeForces Round #712 (Div1) A : <a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1503/A">原题链接</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line">string str;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Right</span><span class="params">( string str )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	stack&lt;<span class="type">char</span>&gt; s;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; str.<span class="built_in">length</span>() ; k++ )</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( s.<span class="built_in">empty</span>() )</span><br><span class="line">		&#123;</span><br><span class="line">			s.<span class="built_in">push</span>( str[k] );</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( str[k] == <span class="string">&#x27;)&#x27;</span> &amp;&amp; s.<span class="built_in">top</span>() == <span class="string">&#x27;(&#x27;</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			s.<span class="built_in">pop</span>();</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		s.<span class="built_in">push</span>( str[k] );</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> s.<span class="built_in">empty</span>();</span><br><span class="line">	</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; str;</span><br><span class="line">	</span><br><span class="line">	<span class="type">bool</span> f = <span class="literal">true</span>;</span><br><span class="line">	</span><br><span class="line">	string ansa = <span class="string">&quot;&quot;</span>;</span><br><span class="line">	string ansb = <span class="string">&quot;&quot;</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> one_num = <span class="number">0</span>;<span class="type">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; str.<span class="built_in">length</span>() ; k++ )	<span class="keyword">if</span> ( str[k] == <span class="string">&#x27;1&#x27;</span> )	one_num++;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> jilv = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; str.<span class="built_in">length</span>() ; k++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ( str[k] == <span class="string">&#x27;1&#x27;</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			jilv &lt; one_num/<span class="number">2</span> ? ansa += <span class="string">&quot;(&quot;</span> : ansa += <span class="string">&quot;)&quot;</span>;</span><br><span class="line">			jilv++;</span><br><span class="line">		&#125;<span class="keyword">else</span></span><br><span class="line">			flag ? ( ansa += <span class="string">&quot;(&quot;</span> , flag = <span class="number">0</span> ) : ( ansa += <span class="string">&quot;)&quot;</span> , flag = <span class="number">1</span> );</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n ; k++ )</span><br><span class="line">		str[k] == <span class="string">&#x27;1&#x27;</span> ? ansb += ansa[k] : ( ansa[k] == <span class="string">&#x27;(&#x27;</span> ? ansb += <span class="string">&quot;)&quot;</span> : ansb += <span class="string">&quot;(&quot;</span>);</span><br><span class="line">		</span><br><span class="line">	<span class="comment">//cout &lt;&lt; ansa &lt;&lt; endl &lt;&lt; ansb &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">	f = <span class="built_in">Right</span>( ansb ) &amp;&amp; <span class="built_in">Right</span>( ansa );</span><br><span class="line">	</span><br><span class="line">	f ? cout &lt;&lt; <span class="string">&quot;YES\n&quot;</span> &lt;&lt; ansa &lt;&lt; <span class="string">&quot;\n&quot;</span> &lt;&lt; ansb &lt;&lt; endl : cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; endl;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>) -&gt; ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> t;</span><br><span class="line">	cin &gt;&gt; t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( t-- ) <span class="built_in">solve</span>();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">构造题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2002/03/30/CodeForcesRound-712-Div1-A/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -289,10 +330,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
