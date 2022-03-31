@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cqupthaopp.github.io">
-  <title>KMP | Hao_pp的博客</title>
+  <title>CodeForcesRound752-Div1-B | Hao_pp的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="KMP专题集合：记录KMP相关算法题目">
+  <meta name="description" content="CodeForces Round #752(Div1)B: 原题链接 题意，我们需要找到一个 n 使 n % x &#x3D; y % n 1.当 x &gt;&#x3D; y 的时候 我们可以使 n % x &#x3D; y % n &#x3D; y 推出  n &#x3D; x + y 2.当 x &lt; y 的时候，我们可以发现  n % x &#x3D; y % n &lt; x 所以n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KMP">
-<meta property="og:url" content="https://cqupthaopp.github.io/2022/03/16/KMP/index.html">
+<meta property="og:title" content="CodeForcesRound752-Div1-B">
+<meta property="og:url" content="https://cqupthaopp.github.io/2002/03/31/CodeForcesRound752-Div1-B/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
-<meta property="og:description" content="KMP专题集合：记录KMP相关算法题目">
+<meta property="og:description" content="CodeForces Round #752(Div1)B: 原题链接 题意，我们需要找到一个 n 使 n % x &#x3D; y % n 1.当 x &gt;&#x3D; y 的时候 我们可以使 n % x &#x3D; y % n &#x3D; y 推出  n &#x3D; x + y 2.当 x &lt; y 的时候，我们可以发现  n % x &#x3D; y % n &lt; x 所以n">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-16T05:40:11.000Z">
-<meta property="article:modified_time" content="2022-03-16T06:40:06.070Z">
+<meta property="article:published_time" content="2002-03-31T12:19:37.000Z">
+<meta property="article:modified_time" content="2022-03-31T12:24:24.230Z">
 <meta property="article:author" content="Hao_pp">
-<meta property="article:tag" content="KMP">
+<meta property="article:tag" content="构造题">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hao_pp的博客" type="application/atom+xml">
@@ -208,22 +208,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-KMP" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CodeForcesRound752-Div1-B" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      KMP
+      CodeForcesRound752-Div1-B
     </h1>
   
 
 
   
   
-<a href="/2022/03/16/KMP/" class="archive-article-date">
-        <time datetime="2022-03-16T05:40:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-16</time>
+<a href="/2002/03/31/CodeForcesRound752-Div1-B/" class="archive-article-date">
+        <time datetime="2002-03-31T12:19:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-03-31</time>
 </a>
 
   
@@ -236,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">208字</span>
+      <span class="post-count">193字</span>
     </span>
   </span>
 
@@ -256,16 +256,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="KMP专题集合："><a href="#KMP专题集合：" class="headerlink" title="KMP专题集合："></a>KMP专题集合：</h4><p>记录KMP相关算法题目</p>
-<span id="more"></span>
-
-
-
-<p>KMP入门：ACWING 141.周期</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/143/">原题链接</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> Next[ <span class="number">1000005</span> ];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getNext</span><span class="params">( string str )</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    Next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> k = <span class="number">-1</span>;<span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>( j &lt; str.<span class="built_in">length</span>() )&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ( k == <span class="number">-1</span> || str[k] == str[j] )&#123;</span><br><span class="line">            k++;j++;</span><br><span class="line">            Next[j] = k;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">            k = Next[k];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//  for ( int k = 0 ; k &lt;= str.length() ; k++ )</span></span><br><span class="line"><span class="comment">//      cout&lt;&lt;k&lt;&lt;&quot; &quot;&lt;&lt;Next[k]&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>( <span class="literal">false</span> );</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;string str;<span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>( cin&gt;&gt;n &amp;&amp; n )&#123;</span><br><span class="line"></span><br><span class="line">        cin&gt;&gt;str;</span><br><span class="line"></span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;Test case #&quot;</span>&lt;&lt;++t&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">getNext</span>( str );</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt; n ; k++ )&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ( Next[k+<span class="number">1</span>] == <span class="number">0</span> )   <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ( Next[k+<span class="number">1</span>] * <span class="number">2</span> &lt; k + <span class="number">1</span> )    <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ( (k+<span class="number">1</span>)%((k+<span class="number">1</span>)-Next[k+<span class="number">1</span>]) != <span class="number">0</span>)  <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            cout&lt;&lt;k+<span class="number">1</span>&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;(k+<span class="number">1</span>)/((k+<span class="number">1</span>)-Next[k+<span class="number">1</span>])&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+    <p>CodeForces Round #752(Div1)B: <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1603/problem/B">原题链接</a></p>
+<p>题意，我们需要找到一个 n 使 n % x &#x3D; y % n</p>
+<p>1.当 x &gt;&#x3D; y 的时候 我们可以使 n % x &#x3D; y % n &#x3D; y 推出  n &#x3D; x + y</p>
+<p>2.当 x &lt; y 的时候，我们可以发现  n % x &#x3D; y % n &lt; x</p>
+<p>所以n必须小于y ,设 n  &#x3D; y - k ( k &lt; x) &#x3D;&#x3D;&gt; y % n  &#x3D; k &#x3D;  n % x</p>
+<p>推出 (  y - k ) % x &#x3D; k 推出  y - k &#x3D; ax + k 推出  2k &#x3D; y - ax &#x3D; y % x 所以 k &#x3D; ( y % x )&#x2F;2</p>
+<p>code:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> t;cin &gt;&gt; t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( t-- )</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> x,y;</span><br><span class="line">		cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (  x &lt;= y )</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; y  - ( y % x ) / <span class="number">2</span> &lt;&lt; endl;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		cout &lt;&lt; x + y &lt;&lt; endl;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
 
     
@@ -281,7 +279,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://cqupthaopp.github.io/2022/03/16/KMP/" title="KMP" target="_blank">https://cqupthaopp.github.io/2022/03/16/KMP/</a>
+          <a href="https://cqupthaopp.github.io/2002/03/31/CodeForcesRound752-Div1-B/" title="CodeForcesRound752-Div1-B" target="_blank">https://cqupthaopp.github.io/2002/03/31/CodeForcesRound752-Div1-B/</a>
         </li>
         
         <li>
@@ -303,7 +301,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">KMP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">构造题</a>
         		</li>
       		
 		</ul>
@@ -359,7 +357,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2022/03/16/KMP/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2002/03/31/CodeForcesRound752-Div1-B/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -374,18 +372,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/03/17/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/03/16/KMP/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          字符串的最小表示法
+          KMP
         
       </div>
     </a>
   
   
-    <a href="/2002/03/31/CodeForcesRound752-Div1-B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CodeForcesRound752-Div1-B</div>
+    <a href="/2002/03/30/CodeForcesRound-712-Div1-A/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CodeForcesRound#712(Div1)A</div>
       <i class="icon-circle-right"></i>
     </a>
   
