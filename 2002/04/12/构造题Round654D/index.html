@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cqupthaopp.github.io">
-  <title>CodeForcesRound752-Div1-B | Hao_pp的博客</title>
+  <title>构造题Round654D | Hao_pp的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="CodeForces Round #752(Div1)B: 原题链接 题意，我们需要找到一个 n 使 n % x &#x3D; y % n 1.当 x &gt;&#x3D; y 的时候 我们可以使 n % x &#x3D; y % n &#x3D; y 推出  n &#x3D; x + y 2.当 x &lt; y 的时候，我们可以发现  n % x &#x3D; y % n &lt; x 所以n">
+  <meta name="description" content="CodeForces Round #654 D 构造一个0-1矩阵，设最大和行与最小和行的差为cnt1，最大和列与最小和列的差为cnt2，求min( cnt1*cnt1 + cnt2 * cnt2 ); 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;bi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CodeForcesRound752-Div1-B">
-<meta property="og:url" content="https://cqupthaopp.github.io/2002/03/31/CodeForcesRound752-Div1-B/index.html">
+<meta property="og:title" content="构造题Round654D">
+<meta property="og:url" content="https://cqupthaopp.github.io/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
-<meta property="og:description" content="CodeForces Round #752(Div1)B: 原题链接 题意，我们需要找到一个 n 使 n % x &#x3D; y % n 1.当 x &gt;&#x3D; y 的时候 我们可以使 n % x &#x3D; y % n &#x3D; y 推出  n &#x3D; x + y 2.当 x &lt; y 的时候，我们可以发现  n % x &#x3D; y % n &lt; x 所以n">
+<meta property="og:description" content="CodeForces Round #654 D 构造一个0-1矩阵，设最大和行与最小和行的差为cnt1，最大和列与最小和列的差为cnt2，求min( cnt1*cnt1 + cnt2 * cnt2 ); 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;bi">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2002-03-31T12:19:37.000Z">
-<meta property="article:modified_time" content="2022-03-31T12:24:24.230Z">
+<meta property="article:published_time" content="2002-04-12T11:05:23.000Z">
+<meta property="article:modified_time" content="2022-04-12T12:18:29.233Z">
 <meta property="article:author" content="Hao_pp">
 <meta property="article:tag" content="构造题">
 <meta name="twitter:card" content="summary">
@@ -208,22 +208,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CodeForcesRound752-Div1-B" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-构造题Round654D" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      CodeForcesRound752-Div1-B
+      构造题Round654D
     </h1>
   
 
 
   
   
-<a href="/2002/03/31/CodeForcesRound752-Div1-B/" class="archive-article-date">
-        <time datetime="2002-03-31T12:19:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-03-31</time>
+<a href="/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/" class="archive-article-date">
+        <time datetime="2002-04-12T11:05:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-04-12</time>
 </a>
 
   
@@ -256,14 +256,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>CodeForces Round #752(Div1)B: <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1603/problem/B">原题链接</a></p>
-<p>题意，我们需要找到一个 n 使 n % x &#x3D; y % n</p>
-<p>1.当 x &gt;&#x3D; y 的时候 我们可以使 n % x &#x3D; y % n &#x3D; y 推出  n &#x3D; x + y</p>
-<p>2.当 x &lt; y 的时候，我们可以发现  n % x &#x3D; y % n &lt; x</p>
-<p>所以n必须小于y ,设 n  &#x3D; y - k ( k &lt; x) &#x3D;&#x3D;&gt; y % n  &#x3D; k &#x3D;  n % x</p>
-<p>推出 (  y - k ) % x &#x3D; k 推出  y - k &#x3D; ax + k 推出  2k &#x3D; y - ax &#x3D; y % x 所以 k &#x3D; ( y % x )&#x2F;2</p>
-<p>code:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> t;cin &gt;&gt; t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( t-- )</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> x,y;</span><br><span class="line">		cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (  x &lt;= y )</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; y  - ( y % x ) / <span class="number">2</span> &lt;&lt; endl;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		cout &lt;&lt; x + y &lt;&lt; endl;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+    <p>CodeForces Round #654 D</p>
+<p>构造一个0-1矩阵，设最大和行与最小和行的差为cnt1，最大和列与最小和列的差为cnt2，求min( cnt1*cnt1 + cnt2 * cnt2 );</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n,del;cin &gt;&gt; n &gt;&gt; del;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> ( n == <span class="number">1</span> ) </span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">		</span><br><span class="line">		del ? cout &lt;&lt; <span class="number">1</span> &lt;&lt; endl : cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> num[n][n];<span class="built_in">memset</span>( num , <span class="number">0</span> ,<span class="keyword">sizeof</span> num );</span><br><span class="line">	</span><br><span class="line">	( del % n == <span class="number">0</span> ) ? cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl : cout &lt;&lt; <span class="number">2</span> &lt;&lt; endl;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n &amp;&amp; del ; k++ )</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; n &amp;&amp; del; i++ )</span><br><span class="line"> 			num[ i ][ ( k + i ) % n ] = <span class="number">1</span> , del-- ;</span><br><span class="line"> 	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n ; k++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; n ; i++ )</span><br><span class="line">			cout &lt;&lt; num[k][i];</span><br><span class="line">		cout &lt;&lt; endl; </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> t;cin &gt;&gt; t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( t-- ) <span class="built_in">solve</span>();</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     
@@ -279,7 +274,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://cqupthaopp.github.io/2002/03/31/CodeForcesRound752-Div1-B/" title="CodeForcesRound752-Div1-B" target="_blank">https://cqupthaopp.github.io/2002/03/31/CodeForcesRound752-Div1-B/</a>
+          <a href="https://cqupthaopp.github.io/2002/04/12/构造题Round654D/" title="构造题Round654D" target="_blank">https://cqupthaopp.github.io/2002/04/12/构造题Round654D/</a>
         </li>
         
         <li>
@@ -357,7 +352,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2002/03/31/CodeForcesRound752-Div1-B/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -372,18 +367,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/03/16/KMP/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          构造题Round654D
+          KMP
         
       </div>
     </a>
   
   
-    <a href="/2002/03/30/CodeForcesRound-712-Div1-A/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CodeForcesRound#712(Div1)A</div>
+    <a href="/2002/03/31/CodeForcesRound752-Div1-B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CodeForcesRound752-Div1-B</div>
       <i class="icon-circle-right"></i>
     </a>
   

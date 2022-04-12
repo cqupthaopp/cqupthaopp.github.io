@@ -210,95 +210,6 @@
             
 
   
-    <article id="post-马拉车算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/03/18/%E9%A9%AC%E6%8B%89%E8%BD%A6%E7%AE%97%E6%B3%95/" target="_blank">马拉车算法</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/03/18/%E9%A9%AC%E6%8B%89%E8%BD%A6%E7%AE%97%E6%B3%95/" class="archive-article-date">
-        <time datetime="2022-03-18T04:19:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>马拉车思想:</p>
-<p>  我们记录右边界最远的回文字符串，如果现在这个点在最远的边界外面，我们只能暴力求解，即以他为中心然后两边找。如果在最远边界之内说明在以这点为中心的情况下，当前点的对称点的回文情况于现在一样，传过来就可以了，当然现在可能还可以继续向外延申，所以马拉车的本质是减少向外算的数量，本质还是暴力。特别的，如果mx(边界) - i(当前点) &lt; 对称点的回文情况，我们取mx - i 因为外面不相同了。</p>
-    
-    <a class="article-more-a" href="/2022/03/18/%E9%A9%AC%E6%8B%89%E8%BD%A6%E7%AE%97%E6%B3%95/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/03/18/%E9%A9%AC%E6%8B%89%E8%BD%A6%E7%AE%97%E6%B3%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-各种哈希" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -534,6 +445,95 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/03/16/KMP/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-构造题Round654D" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/" target="_blank">构造题Round654D</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/" class="archive-article-date">
+        <time datetime="2002-04-12T11:05:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-04-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>CodeForces Round #654 D</p>
+<p>构造一个0-1矩阵，设最大和行与最小和行的差为cnt1，最大和列与最小和列的差为cnt2，求min( cnt1*cnt1 + cnt2 * cnt2 );</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n,del;cin &gt;&gt; n &gt;&gt; del;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> ( n == <span class="number">1</span> ) </span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">		</span><br><span class="line">		del ? cout &lt;&lt; <span class="number">1</span> &lt;&lt; endl : cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> num[n][n];<span class="built_in">memset</span>( num , <span class="number">0</span> ,<span class="keyword">sizeof</span> num );</span><br><span class="line">	</span><br><span class="line">	( del % n == <span class="number">0</span> ) ? cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl : cout &lt;&lt; <span class="number">2</span> &lt;&lt; endl;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n &amp;&amp; del ; k++ )</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; n &amp;&amp; del; i++ )</span><br><span class="line"> 			num[ i ][ ( k + i ) % n ] = <span class="number">1</span> , del-- ;</span><br><span class="line"> 	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; n ; k++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; n ; i++ )</span><br><span class="line">			cout &lt;&lt; num[k][i];</span><br><span class="line">		cout &lt;&lt; endl; </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> t;cin &gt;&gt; t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>( t-- ) <span class="built_in">solve</span>();</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">构造题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/">展开全文 >></a>
     </p>
     
 
@@ -873,10 +873,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ICPC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">构造题</a>
               </li>
              
@@ -885,11 +881,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
+                <a href="javascript:void(0)" class="js-tag color5">ICPC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">math</a>
+                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -897,11 +893,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字典树</a>
+                <a href="javascript:void(0)" class="js-tag color5">math</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字典树</a>
               </li>
             
             <div class="clearfix"></div>
