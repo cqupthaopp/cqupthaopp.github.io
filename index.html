@@ -210,6 +210,185 @@
             
 
   
+    <article id="post-2022劳动节牛客题解与感悟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/05/05/2022%E5%8A%B3%E5%8A%A8%E8%8A%82%E7%89%9B%E5%AE%A2%E9%A2%98%E8%A7%A3%E4%B8%8E%E6%84%9F%E6%82%9F/" target="_blank">2022劳动节牛客题解与感悟</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/05/05/2022%E5%8A%B3%E5%8A%A8%E8%8A%82%E7%89%9B%E5%AE%A2%E9%A2%98%E8%A7%A3%E4%B8%8E%E6%84%9F%E6%82%9F/" class="archive-article-date">
+        <time datetime="2022-05-05T12:26:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-05</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day-3"></a>Day-3</h1><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/33551">比赛链接</a></p>
+<h3 id="A-树状数组"><a href="#A-树状数组" class="headerlink" title="A.树状数组"></a>A.树状数组</h3><h5 id="题意：有两种操作-1-让-l-r-的Ai-有二分之一的几率-lowbit-x-和二分之一的几率-lowbit-x"><a href="#题意：有两种操作-1-让-l-r-的Ai-有二分之一的几率-lowbit-x-和二分之一的几率-lowbit-x" class="headerlink" title="题意：有两种操作 1.让[l,r]的Ai 有二分之一的几率 +lowbit(x) 和二分之一的几率 -lowbit(x);"></a>题意：有两种操作 1.让[l,r]的Ai 有二分之一的几率 +lowbit(x) 和二分之一的几率 -lowbit(x);</h5><h5 id="2-查询-l-r-的总和的期望。"><a href="#2-查询-l-r-的总和的期望。" class="headerlink" title="2.查询[l,r]的总和的期望。"></a>2.查询[l,r]的总和的期望。</h5><h5 id="思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。"><a href="#思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。" class="headerlink" title="思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。"></a>思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。</h5><h3 id="D-好题！"><a href="#D-好题！" class="headerlink" title="D.好题！"></a>D.好题！</h3><p><a href="https://cqupthaopp.github.io/2022/05/02/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2%E4%B8%8E%E5%B7%AE%E5%88%86%E5%89%8D%E7%BC%80%E5%92%8C%E7%9A%84%E5%85%B3%E7%B3%BB/">链接</a></p>
+<h3 id="J-简单题，不写。"><a href="#J-简单题，不写。" class="headerlink" title="J.简单题，不写。"></a>J.简单题，不写。</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/33551/J">链接</a></p>
+<h1 id="Day-4-链接"><a href="#Day-4-链接" class="headerlink" title="Day-4 链接"></a>Day-4 <a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/33552">链接</a></h1><h3 id="A-单调栈好题。"><a href="#A-单调栈好题。" class="headerlink" title="A.单调栈好题。"></a>A.单调栈好题。</h3><h5 id="题意：求最长的长度，满足这个长度的所有子序列的最小值的下标一样。"><a href="#题意：求最长的长度，满足这个长度的所有子序列的最小值的下标一样。" class="headerlink" title="题意：求最长的长度，满足这个长度的所有子序列的最小值的下标一样。"></a>题意：求最长的长度，满足这个长度的所有子序列的最小值的下标一样。</h5><h5 id="思路：如果长度（n-1）的子序列满足这个条件，如何判断长度为n的子序列满足呢。"><a href="#思路：如果长度（n-1）的子序列满足这个条件，如何判断长度为n的子序列满足呢。" class="headerlink" title="思路：如果长度（n-1）的子序列满足这个条件，如何判断长度为n的子序列满足呢。"></a>思路：如果长度（n-1）的子序列满足这个条件，如何判断长度为n的子序列满足呢。</h5><h5 id="把比num-n-小的所有数存入单调栈中就行了，如果比他小的数量相同，即可。"><a href="#把比num-n-小的所有数存入单调栈中就行了，如果比他小的数量相同，即可。" class="headerlink" title="把比num[n]小的所有数存入单调栈中就行了，如果比他小的数量相同，即可。"></a>把比num[n]小的所有数存入单调栈中就行了，如果比他小的数量相同，即可。</h5><h2 id="E-组合数和DP两种做法。"><a href="#E-组合数和DP两种做法。" class="headerlink" title="E.组合数和DP两种做法。"></a>E.组合数和DP两种做法。</h2><p>还没看懂，等会儿。</p>
+<p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/33552/E">链接</a></p>
+<h3 id="J-高精度水题"><a href="#J-高精度水题" class="headerlink" title="J.高精度水题"></a>J.高精度水题</h3><h1 id="Day-5-链接"><a href="#Day-5-链接" class="headerlink" title="Day-5 链接"></a>Day-5 <a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/33553">链接</a></h1><h3 id="A-概率论题。"><a href="#A-概率论题。" class="headerlink" title="A.概率论题。"></a>A.概率论题。</h3><h4 id="题意：-一个长度为n的环从0出发，相同的概率向前走或者向后走-。求正好走完一个圆的所有点最后停在点k的概率的逆元。"><a href="#题意：-一个长度为n的环从0出发，相同的概率向前走或者向后走-。求正好走完一个圆的所有点最后停在点k的概率的逆元。" class="headerlink" title="题意： 一个长度为n的环从0出发，相同的概率向前走或者向后走 。求正好走完一个圆的所有点最后停在点k的概率的逆元。"></a>题意： 一个长度为n的环从0出发，相同的概率向前走或者向后走 。求正好走完一个圆的所有点最后停在点k的概率的逆元。</h4><h4 id="思路：显然不可能最后停在0，其他点的概率分别为1-x2F-n-1-如果长度为1所以一定停在0处，所以n-x3D-x3D-1的时候-概率为1"><a href="#思路：显然不可能最后停在0，其他点的概率分别为1-x2F-n-1-如果长度为1所以一定停在0处，所以n-x3D-x3D-1的时候-概率为1" class="headerlink" title="思路：显然不可能最后停在0，其他点的概率分别为1&#x2F;(n-1).如果长度为1所以一定停在0处，所以n &#x3D;&#x3D; 1的时候 概率为1."></a>思路：显然不可能最后停在0，其他点的概率分别为1&#x2F;(n-1).如果长度为1所以一定停在0处，所以n &#x3D;&#x3D; 1的时候 概率为1.</h4><h3 id="F-剪枝优化好题。"><a href="#F-剪枝优化好题。" class="headerlink" title="F.剪枝优化好题。"></a>F.剪枝优化好题。</h3><h4 id="题意：给你2n个人，他们互相之间有一个权值。将他们分为两队。求不同队的所有人之间的权值之和。"><a href="#题意：给你2n个人，他们互相之间有一个权值。将他们分为两队。求不同队的所有人之间的权值之和。" class="headerlink" title="题意：给你2n个人，他们互相之间有一个权值。将他们分为两队。求不同队的所有人之间的权值之和。"></a>题意：给你2n个人，他们互相之间有一个权值。将他们分为两队。求不同队的所有人之间的权值之和。</h4><h3 id="感悟：如果碰到用01来记录选或者不选择，运用位运算记录。如果答案值可以在dfs的时候更新，就不用再最后再来算一次，记录跟着dfs函数走。"><a href="#感悟：如果碰到用01来记录选或者不选择，运用位运算记录。如果答案值可以在dfs的时候更新，就不用再最后再来算一次，记录跟着dfs函数走。" class="headerlink" title="感悟：如果碰到用01来记录选或者不选择，运用位运算记录。如果答案值可以在dfs的时候更新，就不用再最后再来算一次，记录跟着dfs函数走。"></a>感悟：如果碰到用01来记录选或者不选择，运用位运算记录。如果答案值可以在dfs的时候更新，就不用再最后再来算一次，记录跟着dfs函数走。</h3>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nowcoder</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/05/05/2022%E5%8A%B3%E5%8A%A8%E8%8A%82%E7%89%9B%E5%AE%A2%E9%A2%98%E8%A7%A3%E4%B8%8E%E6%84%9F%E6%82%9F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数论-本原直角三角形及推论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/05/04/%E6%95%B0%E8%AE%BA-%E6%9C%AC%E5%8E%9F%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2%E5%8F%8A%E6%8E%A8%E8%AE%BA/" target="_blank">数论:本原直角三角形及推论</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/05/04/%E6%95%B0%E8%AE%BA-%E6%9C%AC%E5%8E%9F%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2%E5%8F%8A%E6%8E%A8%E8%AE%BA/" class="archive-article-date">
+        <time datetime="2022-05-04T09:41:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-04</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="一，引入"><a href="#一，引入" class="headerlink" title="一，引入"></a>一，引入</h1><h4 id="本原直角三角形"><a href="#本原直角三角形" class="headerlink" title="本原直角三角形"></a>本原直角三角形</h4><p>本原直角三角形是指三边长均为整数且两两互素的直角三角形</p>
+<p><strong>所有的直角三角形的三边长一定是某个本原直角三角形的对应倍数</strong></p>
+    
+    <a class="article-more-a" href="/2022/05/04/%E6%95%B0%E8%AE%BA-%E6%9C%AC%E5%8E%9F%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2%E5%8F%8A%E6%8E%A8%E8%AE%BA/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/05/04/%E6%95%B0%E8%AE%BA-%E6%9C%AC%E5%8E%9F%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2%E5%8F%8A%E6%8E%A8%E8%AE%BA/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-杨辉三角形与差分前缀和的关系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -915,183 +1094,6 @@
 
 
   
-    <article id="post-CodeTON-Round-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/03/25/CodeTON-Round-1/" target="_blank">CodeTON Round 1</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/03/25/CodeTON-Round-1/" class="archive-article-date">
-        <time datetime="2022-03-25T02:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-25</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>好好做人，好好做事</p>
-    
-    <a class="article-more-a" href="/2022/03/25/CodeTON-Round-1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/03/25/CodeTON-Round-1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基础数论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" target="_blank">基础数论</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="archive-article-date">
-        <time datetime="2022-03-22T14:01:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="1，逆元"><a href="#1，逆元" class="headerlink" title="1，逆元"></a>1，逆元</h1><p>当我们需要求组合数C(n,m)的时候，如果分子过大我们需要对其进行%运算，但是除法是不能够进行分开取模再除的，所以我们引入逆元的概念。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a/b)%mod == (a*c)%mod  [ c 为 b 的逆元 ，前提为a能整除b]</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1213,15 +1215,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">构造题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ICPC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1229,7 +1223,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
+                <a href="javascript:void(0)" class="js-tag color4">构造题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nowcoder</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1242,6 +1244,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
               </li>
              
               <li class="article-tag-list-item">
