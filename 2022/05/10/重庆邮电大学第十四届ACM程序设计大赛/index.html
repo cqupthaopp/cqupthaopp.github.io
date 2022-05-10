@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cqupthaopp.github.io">
-  <title>Archives | Hao_pp的博客</title>
+  <title>重庆邮电大学第十四届ACM程序设计大赛 | Hao_pp的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hao_pp的博客">
-<meta property="og:url" content="https://cqupthaopp.github.io/archives/page/2/index.html">
+  <meta name="description" content="F.koifish的火柴棒">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重庆邮电大学第十四届ACM程序设计大赛">
+<meta property="og:url" content="https://cqupthaopp.github.io/2022/05/10/%E9%87%8D%E5%BA%86%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%B1%8AACM%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
+<meta property="og:description" content="F.koifish的火柴棒">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-10T15:34:09.000Z">
+<meta property="article:modified_time" content="2022-05-10T15:56:11.936Z">
 <meta property="article:author" content="Hao_pp">
+<meta property="article:tag" content="cqupt">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hao_pp的博客" type="application/atom+xml">
@@ -203,466 +208,225 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-重庆邮电大学第十四届ACM程序设计大赛" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/27/%E7%AE%80%E5%8D%95%E5%AD%97%E5%85%B8%E6%A0%91/" class="archive-article-date">
-        <time datetime="2022-03-27T06:48:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-27</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/27/%E7%AE%80%E5%8D%95%E5%AD%97%E5%85%B8%E6%A0%91/" target="_blank">简单字典树</a>
   
+    <h1 class="article-title" itemprop="name">
+      重庆邮电大学第十四届ACM程序设计大赛
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+<a href="/2022/05/10/%E9%87%8D%E5%BA%86%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%B1%8AACM%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B/" class="archive-article-date">
+        <time datetime="2022-05-10T15:34:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-10</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="F-koifish的火柴棒"><a href="#F-koifish的火柴棒" class="headerlink" title="F.koifish的火柴棒"></a>F.koifish的火柴棒</h1><span id="more"></span>
+
+<p>题意是给你N跟火柴问你能拼出的最大数字， 用于形成数字1-9的火柴棍数量应分别为。2，5，5，4，5，6，3，7，6。你只有选部分数字的权利，这部分会给你。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一行两个整数，分别是N和M</span><br><span class="line"></span><br><span class="line">第二行M个数，表示koifish要拼出的数用到的数字分别是哪些。</span><br></pre></td></tr></table></figure>
+
+<p>思路：dp好题，因为最后的数字会很大，我们利用string记录，最大的即字典序最大的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[ k ] = dp[ k - i ] + flag[ i ] judge with dp[ k ];</span><br><span class="line">遍历能用的每一个数字，当前数字需要i根火柴，那么用k根火柴拼出来的数字是用k-i根火柴拼出的数字 + 当前数字。要注意的是 当dp[ k - i ].len == 0的时候 我们只能当k - i也为0的时候才能加数字，因为必须用完，所以要严格往后推。例如数字7要三根火柴 dp[ 2 ] = &quot;&quot;,我们不能用dp[ 2 ] + &#x27;7&#x27; ==&gt; dp[ 5 ]。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">string dp[ <span class="number">10005</span> ];</span><br><span class="line"><span class="type">int</span> flag[ <span class="number">10</span> ] = &#123; <span class="number">0</span> , <span class="number">2</span> , <span class="number">5</span> , <span class="number">5</span> , <span class="number">4</span> , <span class="number">5</span> , <span class="number">6</span>, <span class="number">3</span> , <span class="number">7</span> , <span class="number">6</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">check</span><span class="params">( <span class="type">int</span> dd , <span class="type">int</span> now ,<span class="type">int</span> to )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">char</span> n = now + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	string d = dp[ dd ] + n;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ( d.<span class="built_in">length</span>() == <span class="number">1</span> )</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> ( dd == <span class="number">0</span> )</span><br><span class="line">			dp[ to ] = ( dp[ to ] &gt; d ? dp[ to ] : d );</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ( d.<span class="built_in">length</span>() &gt; dp[ to ].<span class="built_in">length</span>() )</span><br><span class="line">	&#123;</span><br><span class="line">		dp[ to ] = d;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> ( d.<span class="built_in">length</span>() == dp[ to ].<span class="built_in">length</span>() )</span><br><span class="line">		dp[ to ] = ( dp[ to ] &gt; d ? dp[ to ] : d );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> n;<span class="type">int</span> m;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(m)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> &amp;k : v ) cin &gt;&gt; k;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">9</span> ; i &gt;= <span class="number">1</span> ; i-- )</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt;= n ; k++ )</span><br><span class="line">			<span class="keyword">if</span> ( <span class="built_in">find</span>( v.<span class="built_in">begin</span>() , v.<span class="built_in">end</span>() , i ) != v.<span class="built_in">end</span>() &amp;&amp; k &gt;= flag[ i ] )</span><br><span class="line">				<span class="built_in">check</span>( k - flag[ i ] , i , k );</span><br><span class="line">	cout &lt;&lt; dp[ n ] &lt;&lt; endl;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">solve</span>();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h1 id="G-koifish的疑惑。"><a href="#G-koifish的疑惑。" class="headerlink" title="G.koifish的疑惑。"></a>G.koifish的疑惑。</h1><p>给你N个数让你找出一个数字X ∈ [0 , k ] , 计算数组a中，sum( ai xor k )的最大值。</p>
+<p>显然对于一个数ai来说，ai的每一位只有拿或者不拿两种情况。记录每一位数组中有多少个1和0。如果是1那么x填1收益是该位为1的数减去该位为0的数*( 1 &lt;&lt; i );所以变成了背包问题，拿或者不拿。</p>
+<h4 id="WARNING！"><a href="#WARNING！" class="headerlink" title="WARNING！"></a>WARNING！</h4><p>因为有40位所以是一个超大背包。写超大背包很麻烦。我们可以算出，如果某一个位置本来能拿1，但是牺牲自己去拿0，那么就可以让他后面的位数肆无忌惮的拿，我们就可以很快得出答案。这样的坏处是找不到全部1都不牺牲的情况，所以我们要在读入数组的时候就先找出每一位1都不牺牲的情况。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入样例</span><br><span class="line">3 7</span><br><span class="line">1 6 3</span><br><span class="line">输出样例</span><br><span class="line">14</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ui unsigned int</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> R register</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> cnt[<span class="number">41</span>][<span class="number">2</span>];</span><br><span class="line">ll x,n,k,ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">read</span>(n);<span class="built_in">read</span>(k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">read</span>(x);ans+=(k^x);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">40</span>;j++) cnt[j][(x&gt;&gt;j)&amp;<span class="number">1</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">40</span>;j&gt;=<span class="number">0</span>;j--) </span><br><span class="line">    <span class="keyword">if</span>(k&amp;(<span class="number">1ll</span>&lt;&lt;j))<span class="comment">//如果k的j位是1</span></span><br><span class="line">    &#123;</span><br><span class="line">        ll sum=cnt[j][<span class="number">1</span>]*(<span class="number">1ll</span>&lt;&lt;j);<span class="comment">//这一位选0</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=j<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) sum+=<span class="built_in">max</span>(cnt[i][<span class="number">0</span>],cnt[i][<span class="number">1</span>])*(<span class="number">1ll</span>&lt;&lt;i);<span class="comment">//后面的数随便选</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">40</span>;i&gt;j;i--) sum+=cnt[i][!((k&gt;&gt;i)&amp;<span class="number">1</span>)]*(<span class="number">1ll</span>&lt;&lt;i);</span><br><span class="line">        <span class="comment">// &#123;</span></span><br><span class="line">        <span class="comment">//     if(k&amp;(1ll&lt;&lt;i)) sum+=cnt[i][0]*(1ll&lt;&lt;i);</span></span><br><span class="line">        <span class="comment">//     else sum+=cnt[i][1]*(1ll&lt;&lt;i);</span></span><br><span class="line">        <span class="comment">// &#125;//前面的和k一样</span></span><br><span class="line">        ans=<span class="built_in">max</span>(ans,sum);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="J-数据结构。（究极好题）"><a href="#J-数据结构。（究极好题）" class="headerlink" title="J.数据结构。（究极好题）"></a>J.数据结构。（究极好题）</h1><p>题意是求区间mex(l,r)是否等于r - l + 1，并且要求可以单点修改。</p>
+<p>我们可以发现，求mex(l,r) &#x3D;&#x3D; r - l + 1 &#x3D;&#x3D;&gt; (l,r)是（0 -&gt; r - l）的任意一个排列。</p>
+<p>我们只要判断[l,r]是不是一个[0,r-l]的排列即可。</p>
+<h3 id="引入：费马大定律。"><a href="#引入：费马大定律。" class="headerlink" title="引入：费马大定律。"></a>引入：费马大定律。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a^n + b^n = c^n (在a!=0,b!=0,c!=0,n&gt;2的时候无解)</span><br><span class="line">我们可以引出推论</span><br><span class="line">a^n + b^n = c^n + d^n (在a!=b!=0c!=d!=0,n&gt;2的时候无解)</span><br><span class="line">这样可以推出</span><br><span class="line">a1^n + a2^n + …… + an^n = b1^n + b2^n + …… + bn^n (和前面条件相同的时候无解)</span><br><span class="line"></span><br><span class="line">我们可以推出当该式子成立的时候</span><br><span class="line">a[1-&gt;n] 是 b[1-&gt;n] 的一个排列。</span><br></pre></td></tr></table></figure>
+
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>n取3的时候较为简单。<br>所以我们只需要维护 a1^3 + a2^3 + …… + an^3 即可，如果它等价于 0^3 + 1^3 + …… + (r-l)^3 </p>
+<p>我们就可以认为 a[1-&gt;n]是 [0 -&gt; r-1]的一个排列。</p>
+<p>用树状数组维护即可。</p>
+<h3 id="CODE："><a href="#CODE：" class="headerlink" title="CODE："></a>CODE：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lowbit(x) ( -x &amp; x )</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MOD 998244353</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="type">int</span> numb[ <span class="number">1000005</span> ];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LBtree</span>&#123;</span><br><span class="line"></span><br><span class="line">	std::vector&lt;ll&gt; v;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">LBtree</span>()&#123;&#125;</span><br><span class="line">	<span class="built_in">LBtree</span>( <span class="type">int</span> n )&#123; v.<span class="built_in">resize</span>( n + <span class="number">1</span> , <span class="number">0</span> ); &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">( <span class="type">int</span> x , <span class="type">int</span> loc )</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">for</span>( ; loc &lt; v.<span class="built_in">size</span>() ; loc += <span class="built_in">lowbit</span>( loc )  )</span><br><span class="line">			v[ loc ] += x , v[ loc ] %= MOD;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function">ll <span class="title">query</span><span class="params">( <span class="type">int</span> l , <span class="type">int</span> r )</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> ( <span class="built_in">get</span>( r ) - <span class="built_in">get</span> ( l - <span class="number">1</span> ) + MOD ) % MOD;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">ll <span class="title">get</span><span class="params">( <span class="type">int</span> loc )</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> ( ; loc &gt; <span class="number">0</span> ; loc -= <span class="built_in">lowbit</span>( loc ) )</span><br><span class="line">			ans += v[ loc ] , ans %= MOD;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">sigend <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>) -&gt; ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> n;<span class="type">int</span> q;</span><br><span class="line">	</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; q;</span><br><span class="line"></span><br><span class="line">	LBtree num = <span class="built_in">LBtree</span>( n );</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> op;</span><br><span class="line">	<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt;= n ; k++ )</span><br><span class="line">		cin &gt;&gt; numb[k] , num.<span class="built_in">update</span>( ( (ll)numb[ k ] * (ll)numb[ k ] ) * numb[ k ] % MOD , k );</span><br><span class="line"></span><br><span class="line">	<span class="comment">// for ( int k = 1 ; k &lt;= n ; k++ )</span></span><br><span class="line">	<span class="comment">// 	cout &lt;&lt; num.query( 1 , k ) &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> l;<span class="type">int</span> r;</span><br><span class="line">	<span class="keyword">while</span>( q-- )</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		cin &gt;&gt; op &gt;&gt; l &gt;&gt; r;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> ( op == <span class="number">1</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			ll updata = <span class="number">1ll</span> * ( r * r * r ) % MOD -  <span class="number">1ll</span> * ( numb[ l ] * numb[ l ] * numb[ l ] % MOD ) ;</span><br><span class="line">			updata += MOD;</span><br><span class="line">			num.<span class="built_in">update</span>( updata % MOD , l );</span><br><span class="line">			numb[ l ] = r;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//cout &lt;&lt; mem.query( 1 , r - l + 1 ) % MOD &lt;&lt; &quot; &quot; &lt;&lt; num.query( l , r ) % MOD &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">		ll now = <span class="built_in">ll</span>( r - l ) * <span class="built_in">ll</span>( r - l + <span class="number">1</span> ) / <span class="number">2</span>;</span><br><span class="line">		now %= MOD;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> ( now * now % MOD == num.<span class="built_in">query</span>( l , r ) % MOD )</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">&quot;true&quot;</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">&quot;false&quot;</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="思考："><a href="#思考：" class="headerlink" title="思考："></a>思考：</h3><p>判断数组a是不是数组b的一个排列，利用公式 a^3 进行哈希。</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Hao_pp
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://cqupthaopp.github.io/2022/05/10/重庆邮电大学第十四届ACM程序设计大赛/" title="重庆邮电大学第十四届ACM程序设计大赛" target="_blank">https://cqupthaopp.github.io/2022/05/10/重庆邮电大学第十四届ACM程序设计大赛/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字典树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">cqupt</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2022/05/10/%E9%87%8D%E5%BA%86%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%B1%8AACM%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/25/CodeTON-Round-1/" class="archive-article-date">
-        <time datetime="2022-03-25T02:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-25</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/05/2022%E5%8A%B3%E5%8A%A8%E8%8A%82%E7%89%9B%E5%AE%A2%E9%A2%98%E8%A7%A3%E4%B8%8E%E6%84%9F%E6%82%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2022劳动节牛客题解与感悟</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/25/CodeTON-Round-1/" target="_blank">CodeTON Round 1</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="archive-article-date">
-        <time datetime="2022-03-22T14:01:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/22/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" target="_blank">基础数论</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/20/CodeForcesRound778/" class="archive-article-date">
-        <time datetime="2022-03-20T14:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-20</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/20/CodeForcesRound778/" target="_blank">CodeForcesRound778</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/18/%E9%A9%AC%E6%8B%89%E8%BD%A6%E7%AE%97%E6%B3%95/" class="archive-article-date">
-        <time datetime="2022-03-18T04:19:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/18/%E9%A9%AC%E6%8B%89%E8%BD%A6%E7%AE%97%E6%B3%95/" target="_blank">马拉车算法</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/17/%E5%90%84%E7%A7%8D%E5%93%88%E5%B8%8C/" class="archive-article-date">
-        <time datetime="2022-03-17T06:08:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/17/%E5%90%84%E7%A7%8D%E5%93%88%E5%B8%8C/" target="_blank">各种哈希</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/17/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/" class="archive-article-date">
-        <time datetime="2022-03-16T16:16:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/17/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/" target="_blank">字符串的最小表示法</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/16/KMP/" class="archive-article-date">
-        <time datetime="2022-03-16T05:40:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-16</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/16/KMP/" target="_blank">KMP</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">KMP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2002" class="archive-year">2002</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/" class="archive-article-date">
-        <time datetime="2002-04-12T11:05:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-04-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2002/04/12/%E6%9E%84%E9%80%A0%E9%A2%98Round654D/" target="_blank">构造题Round654D</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">构造题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2002/03/31/CodeForcesRound752-Div1-B/" class="archive-article-date">
-        <time datetime="2002-03-31T12:19:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-03-31</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2002/03/31/CodeForcesRound752-Div1-B/" target="_blank">CodeForcesRound752-Div1-B</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">构造题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -691,8 +455,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
