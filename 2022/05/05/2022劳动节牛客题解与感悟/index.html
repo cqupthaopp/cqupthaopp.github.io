@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Day-3比赛链接 A.树状数组题意：有两种操作 1.让[l,r]的Ai 有二分之一的几率 +lowbit(x) 和二分之一的几率 -lowbit(x);2.查询[l,r]的总和的期望。思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。D.好题！链接 J.简单题，不写。链接 Day-4 链接A.单调栈好题。题意：求最长的长度，满足这个长度的所有子序列的最小值的下标">
+  <meta name="description" content="Day-3比赛链接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2022劳动节牛客题解与感悟">
 <meta property="og:url" content="https://cqupthaopp.github.io/2022/05/05/2022%E5%8A%B3%E5%8A%A8%E8%8A%82%E7%89%9B%E5%AE%A2%E9%A2%98%E8%A7%A3%E4%B8%8E%E6%84%9F%E6%82%9F/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
-<meta property="og:description" content="Day-3比赛链接 A.树状数组题意：有两种操作 1.让[l,r]的Ai 有二分之一的几率 +lowbit(x) 和二分之一的几率 -lowbit(x);2.查询[l,r]的总和的期望。思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。D.好题！链接 J.简单题，不写。链接 Day-4 链接A.单调栈好题。题意：求最长的长度，满足这个长度的所有子序列的最小值的下标">
+<meta property="og:description" content="Day-3比赛链接">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-05T12:26:27.000Z">
-<meta property="article:modified_time" content="2022-05-05T12:54:39.616Z">
+<meta property="article:modified_time" content="2022-05-13T04:24:46.412Z">
 <meta property="article:author" content="Hao_pp">
 <meta property="article:tag" content="nowcoder">
 <meta name="twitter:card" content="summary">
@@ -257,6 +257,8 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day-3"></a>Day-3</h1><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/33551">比赛链接</a></p>
+<span id="more"></span>
+
 <h3 id="A-树状数组"><a href="#A-树状数组" class="headerlink" title="A.树状数组"></a>A.树状数组</h3><h5 id="题意：有两种操作-1-让-l-r-的Ai-有二分之一的几率-lowbit-x-和二分之一的几率-lowbit-x"><a href="#题意：有两种操作-1-让-l-r-的Ai-有二分之一的几率-lowbit-x-和二分之一的几率-lowbit-x" class="headerlink" title="题意：有两种操作 1.让[l,r]的Ai 有二分之一的几率 +lowbit(x) 和二分之一的几率 -lowbit(x);"></a>题意：有两种操作 1.让[l,r]的Ai 有二分之一的几率 +lowbit(x) 和二分之一的几率 -lowbit(x);</h5><h5 id="2-查询-l-r-的总和的期望。"><a href="#2-查询-l-r-的总和的期望。" class="headerlink" title="2.查询[l,r]的总和的期望。"></a>2.查询[l,r]的总和的期望。</h5><h5 id="思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。"><a href="#思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。" class="headerlink" title="思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。"></a>思路：因为加二分之一和减二分之一之后的该点的期望值不变，所以就是求区间，前缀和也行。</h5><h3 id="D-好题！"><a href="#D-好题！" class="headerlink" title="D.好题！"></a>D.好题！</h3><p><a href="https://cqupthaopp.github.io/2022/05/02/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2%E4%B8%8E%E5%B7%AE%E5%88%86%E5%89%8D%E7%BC%80%E5%92%8C%E7%9A%84%E5%85%B3%E7%B3%BB/">链接</a></p>
 <h3 id="J-简单题，不写。"><a href="#J-简单题，不写。" class="headerlink" title="J.简单题，不写。"></a>J.简单题，不写。</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/33551/J">链接</a></p>
 <h1 id="Day-4-链接"><a href="#Day-4-链接" class="headerlink" title="Day-4 链接"></a>Day-4 <a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/33552">链接</a></h1><h3 id="A-单调栈好题。"><a href="#A-单调栈好题。" class="headerlink" title="A.单调栈好题。"></a>A.单调栈好题。</h3><h5 id="题意：求最长的长度，满足这个长度的所有子序列的最小值的下标一样。"><a href="#题意：求最长的长度，满足这个长度的所有子序列的最小值的下标一样。" class="headerlink" title="题意：求最长的长度，满足这个长度的所有子序列的最小值的下标一样。"></a>题意：求最长的长度，满足这个长度的所有子序列的最小值的下标一样。</h5><h5 id="思路：如果长度（n-1）的子序列满足这个条件，如何判断长度为n的子序列满足呢。"><a href="#思路：如果长度（n-1）的子序列满足这个条件，如何判断长度为n的子序列满足呢。" class="headerlink" title="思路：如果长度（n-1）的子序列满足这个条件，如何判断长度为n的子序列满足呢。"></a>思路：如果长度（n-1）的子序列满足这个条件，如何判断长度为n的子序列满足呢。</h5><h5 id="把比num-n-小的所有数存入单调栈中就行了，如果比他小的数量相同，即可。"><a href="#把比num-n-小的所有数存入单调栈中就行了，如果比他小的数量相同，即可。" class="headerlink" title="把比num[n]小的所有数存入单调栈中就行了，如果比他小的数量相同，即可。"></a>把比num[n]小的所有数存入单调栈中就行了，如果比他小的数量相同，即可。</h5><h2 id="E-组合数和DP两种做法。"><a href="#E-组合数和DP两种做法。" class="headerlink" title="E.组合数和DP两种做法。"></a>E.组合数和DP两种做法。</h2><p>还没看懂，等会儿。</p>
@@ -529,15 +531,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CCPC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ICPC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">构造题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,15 +539,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CCPC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">构造题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
