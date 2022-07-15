@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cqupthaopp.github.io">
-  <title>Tag: codeforces | Hao_pp的博客</title>
+  <title>对于倍增的基本应用(ST表,LCA问题,二分查找) | Hao_pp的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hao_pp的博客">
-<meta property="og:url" content="https://cqupthaopp.github.io/tags/codeforces/index.html">
+  <meta name="description" content="一，利用倍增进行二分查找​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对于倍增的基本应用(ST表,LCA问题,二分查找)">
+<meta property="og:url" content="https://cqupthaopp.github.io/2022/07/15/%E5%AF%B9%E4%BA%8E%E5%80%8D%E5%A2%9E%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8-ST%E8%A1%A8-LCA%E9%97%AE%E9%A2%98-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
+<meta property="og:description" content="一，利用倍增进行二分查找​">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-15T05:43:19.000Z">
+<meta property="article:modified_time" content="2022-07-15T06:04:43.108Z">
 <meta property="article:author" content="Hao_pp">
+<meta property="article:tag" content="倍增">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hao_pp的博客" type="application/atom+xml">
@@ -203,151 +208,219 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-对于倍增的基本应用-ST表-LCA问题-二分查找" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/30/CodeForcesRound779/" class="archive-article-date">
-        <time datetime="2022-03-29T16:00:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-30</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/30/CodeForcesRound779/" target="_blank">CodeForcesRound779</a>
   
+    <h1 class="article-title" itemprop="name">
+      对于倍增的基本应用(ST表,LCA问题,二分查找)
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+<a href="/2022/07/15/%E5%AF%B9%E4%BA%8E%E5%80%8D%E5%A2%9E%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8-ST%E8%A1%A8-LCA%E9%97%AE%E9%A2%98-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="archive-article-date">
+        <time datetime="2022-07-15T05:43:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">943字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">4分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="一，利用倍增进行二分查找"><a href="#一，利用倍增进行二分查找" class="headerlink" title="一，利用倍增进行二分查找"></a>一，利用倍增进行二分查找</h1><p>​    <span id="more"></span></p>
+<p>​    我们将二分答案的最终值看作二进制，例如 00001101 , 那么在[1-10000]的过程中怎么去二分得到呢。传统的二分需要不断去判断[l,r]的关系较为麻烦，所以利用倍增更好。</p>
+<h3 id="How-to-倍增？"><a href="#How-to-倍增？" class="headerlink" title="How to 倍增？"></a>How to 倍增？</h3><p>​    例如我们现在需要在[0 -&gt; 111111 ]中查找，首先check [ 100000 ]这个值，如果返回true那么区间变为[ 1-&gt; 100000 ] 一位一位的进行check最终可以得到一个正好不满足答案的答案，例如答案是100100，那么我们的check过程是这样的.</p>
+<p>​    [ 0 ]  -&gt; check( 100000 ) ? [ 0 ] : [ 100000 ] -&gt; [ 100000 ]  -&gt; check( 010000 ) ? [ 110000 ] : [100000] -&gt; [ 100000 ] -&gt; …… -&gt; [ 100010 ] -&gt; [ 100011 ];</p>
+<p>​    答案100100是能完成任务的最小值，那么我们可以得到一个完不成任务的最大值，所以答案就是我们check出来的值+1.</p>
+<h3 id="How-to-code？"><a href="#How-to-code？" class="headerlink" title="How to code？"></a>How to code？</h3><p>​    </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> k = logMAXN ; k &gt;= <span class="number">0</span> ; k-- )</span><br><span class="line">	<span class="keyword">if</span> ( !<span class="built_in">check</span>( ans + ( <span class="number">1</span> &lt;&lt; k ) ) ) ans += ( <span class="number">1</span> &lt;&lt; k );</span><br><span class="line">cout &lt;&lt; ans + <span class="number">1</span> &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="二，利用倍增去进行解决LCA问题"><a href="#二，利用倍增去进行解决LCA问题" class="headerlink" title="二，利用倍增去进行解决LCA问题"></a>二，利用倍增去进行解决LCA问题</h1><p>​    这里之所以可以进行倍增进行解题是因为，同深度的两个节点的LCA以上的祖先节点一定相同，所以我们按位进行查找找到正好不相同的祖先节点，此刻节点的上面一个节点就是LCA，第一步需要先将不同深度的节点处理到一个深度上。</p>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度:"></a>复杂度:</h3><p>​        查询：logn</p>
+<p>​        预处理 nlogn + ( 2n - 1) [dfs]</p>
+<h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> LCA&#123;</span><br><span class="line"> </span><br><span class="line">	<span class="type">int</span> anc[ MAXN ][ LOGN ];</span><br><span class="line">	<span class="type">int</span> depth[ MAXN ];</span><br><span class="line">	<span class="type">int</span> dist[ MAXN ];</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">dfs</span><span class="params">( <span class="type">int</span> fa , <span class="type">int</span> now , <span class="type">int</span> sd )</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"> </span><br><span class="line">		depth[ now ] = sd;</span><br><span class="line">		anc[ now ][ <span class="number">0</span> ] = fa;</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">for</span>( <span class="type">int</span> k : tree[ now ] )</span><br><span class="line">		&#123;</span><br><span class="line"> </span><br><span class="line">			<span class="keyword">if</span> ( k == fa ) <span class="keyword">continue</span>;</span><br><span class="line"> </span><br><span class="line">			<span class="built_in">dfs</span>( now , k , sd + <span class="number">1</span> );</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"> </span><br><span class="line">		<span class="built_in">dfs</span>( <span class="number">0</span> , <span class="number">1</span> , <span class="number">1</span> );</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">1</span> ; i &lt; LOGN ; i++ )</span><br><span class="line">			<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt;= n ; k++ )</span><br><span class="line">				anc[ k ][ i ] = anc[ anc[ k ][ i - <span class="number">1</span> ] ][ i - <span class="number">1</span> ];</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">swim</span><span class="params">( <span class="type">int</span> &amp;root , <span class="type">int</span> h )</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt; LOGN ; k++ )</span><br><span class="line">		&#123;</span><br><span class="line"> </span><br><span class="line">			<span class="keyword">if</span> ( ! ( h &gt;&gt; k &amp; <span class="number">1</span> ) ) <span class="keyword">continue</span>;</span><br><span class="line"> </span><br><span class="line">			root = anc[ root ][ k ];</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">query</span><span class="params">( <span class="type">int</span> a , <span class="type">int</span> b )</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">if</span> ( depth[ a ] &gt; depth[ b ] ) <span class="built_in">swap</span>( a , b );</span><br><span class="line">		<span class="built_in">swim</span>( b , depth[ b ] - depth[ a ] );</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">if</span> ( a == b ) <span class="keyword">return</span> a;</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> k = LOGN - <span class="number">1</span> ; k &gt;= <span class="number">0</span> ; k-- )</span><br><span class="line">			<span class="keyword">if</span> ( anc[ a ][ k ] != anc[ b ][ k ] )</span><br><span class="line">				a = anc[ a ][ k ] , b = anc[ b ][ k ];</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">return</span> anc[ a ][ <span class="number">0</span> ];</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三，利用ST表处理可重复贡献问题"><a href="#三，利用ST表处理可重复贡献问题" class="headerlink" title="三，利用ST表处理可重复贡献问题"></a>三，利用ST表处理可重复贡献问题</h1><h3 id="ST表是如何工作的"><a href="#ST表是如何工作的" class="headerlink" title="ST表是如何工作的"></a>ST表是如何工作的</h3><p>​    st表将第n个节点的数据向后处理2^k[1,n]个数据，利用倍增法处理这个只需要nlogn的复杂度。</p>
+<p>对于查询一个区间的答案例如[l,r]，我们只需要查询[l,log[len]] 和[ r - ( 1 &lt;&lt; log[len] ) + 1 , log[len] ]就可以得到答案了，优点是ST表可以进行O(1)的查询且预处理比线段树更快，缺点是无法进行修改。</p>
+<h3 id="什么样的数据维护可以用ST表呢？"><a href="#什么样的数据维护可以用ST表呢？" class="headerlink" title="什么样的数据维护可以用ST表呢？"></a>什么样的数据维护可以用ST表呢？</h3><p>​    显然我们可以发现，对于ST表的每次查询几乎一定会存在区间重复，所以我们希望这个重复的区间查询不会对答案造成影响，也就是我们所说的可重复贡献问题，例如求一个区间的最大值，就算里面的数据多来几个也不会影响最终的答案，也例如GCD问题，某个数重复好几个，也不会影响GCD的答案，所以只有当重复贡献不影响答案的时候，我们才可以使用ST表。</p>
+<h3 id="ST表的预处理和基础倍增处理LCA一样，CODE："><a href="#ST表的预处理和基础倍增处理LCA一样，CODE：" class="headerlink" title="ST表的预处理和基础倍增处理LCA一样，CODE："></a>ST表的预处理和基础倍增处理LCA一样，CODE：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">getSt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">0</span> ; k &lt;= n ; k++ )</span><br><span class="line">        minst[ k ][ <span class="number">0</span> ] = maxst[ k ][ <span class="number">0</span> ] = sum[ k ];</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt;= lgn[ n ] ; k++ )</span><br><span class="line">        <span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i + ( <span class="number">1</span> &lt;&lt; k ) - <span class="number">1</span> &lt;= n ; i++ )</span><br><span class="line">            maxst[ i ][ k ] = <span class="built_in">max</span>( maxst[ i ][ k - <span class="number">1</span> ] , maxst[ i + ( <span class="number">1</span> &lt;&lt; ( k - <span class="number">1</span> ) ) ][ k - <span class="number">1</span> ] ),</span><br><span class="line">            minst[ i ][ k ] = <span class="built_in">min</span>( minst[ i ][ k - <span class="number">1</span> ] , minst[ i + ( <span class="number">1</span> &lt;&lt; ( k - <span class="number">1</span> ) ) ][ k - <span class="number">1</span> ] );</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Hao_pp
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://cqupthaopp.github.io/2022/07/15/对于倍增的基本应用-ST表-LCA问题-二分查找/" title="对于倍增的基本应用(ST表,LCA问题,二分查找)" target="_blank">https://cqupthaopp.github.io/2022/07/15/对于倍增的基本应用-ST表-LCA问题-二分查找/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">倍增</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://cqupthaopp.github.io/2022/07/15/%E5%AF%B9%E4%BA%8E%E5%80%8D%E5%A2%9E%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8-ST%E8%A1%A8-LCA%E9%97%AE%E9%A2%98-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/25/CodeTON-Round-1/" class="archive-article-date">
-        <time datetime="2022-03-25T02:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-25</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%AE%B5%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构之线段树</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/25/CodeTON-Round-1/" target="_blank">CodeTON Round 1</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/20/CodeForcesRound778/" class="archive-article-date">
-        <time datetime="2022-03-20T14:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-20</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/03/20/CodeForcesRound778/" target="_blank">CodeForcesRound778</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
 
 
           </div>
@@ -376,9 +449,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
