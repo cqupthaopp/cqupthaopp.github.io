@@ -313,22 +313,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <span id="more"></span>
-
-<h1 id="一，BellManFord算法"><a href="#一，BellManFord算法" class="headerlink" title="一，BellManFord算法"></a>一，BellManFord算法</h1><p>对于bellmanFord，是通过n-1次松弛来完成寻找最短路的，因为运用边数最多为n-1条。所以我们通过这个性质求最多运用k次的最短路或者正好利用k条边的最短路。</p>
-<h4 id="基本最短路"><a href="#基本最短路" class="headerlink" title="基本最短路"></a>基本最短路</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt; n ; k++ )</span><br><span class="line">       <span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; m ;i++ )</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> ( dis[ roads[ i ].x.x ] &lt; INF ) dis[ roads[ i ].x.y ] = <span class="built_in">min</span>( dis[ roads[ i ].x.y ] , dis[ roads[ i ].x.x ] + roads[ i ].y  );<span class="comment">//松弛</span></span><br><span class="line"></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="最多k条边的问题"><a href="#最多k条边的问题" class="headerlink" title="最多k条边的问题"></a>最多k条边的问题</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt;= lim ; k++ )</span><br><span class="line">&#123;</span><br><span class="line">		<span class="built_in">memset</span>( back , dis , <span class="keyword">sizeof</span> back );</span><br><span class="line">		<span class="comment">//拷贝上一次的松弛结果，这样保证运用到的边数不超过限制次数</span></span><br><span class="line">       <span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; m ;i++ )</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> ( dis[ roads[ i ].x.x ] &lt; INF ) dis[ roads[ i ].x.y ] = <span class="built_in">min</span>( dis[ roads[ i ].x.y ] , back[ roads[ i ].x.x ] + roads[ i ].y  );<span class="comment">//利用back松弛</span></span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="正好用k条的问题"><a href="#正好用k条的问题" class="headerlink" title="正好用k条的问题"></a>正好用k条的问题</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt;= lim ; k++ )</span><br><span class="line">&#123;</span><br><span class="line">		<span class="built_in">memset</span>( back , dis , <span class="keyword">sizeof</span> back );</span><br><span class="line">		<span class="comment">//拷贝上一次的松弛结果，这样保证运用到的边数不超过限制次数</span></span><br><span class="line">		<span class="built_in">memset</span>( dis , INF , <span class="keyword">sizeof</span> dis );</span><br><span class="line">		<span class="comment">//dis初始化为INF，这样松弛结果一定为上一次的边数+1，做到限定边数</span></span><br><span class="line">       <span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; m ;i++ )</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> ( dis[ roads[ i ].x.x ] &lt; INF ) dis[ roads[ i ].x.y ] = <span class="built_in">min</span>( dis[ roads[ i ].x.y ] , back[ roads[ i ].x.x ] + roads[ i ].y  );<span class="comment">//利用back松弛</span></span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="二，bellManFord的队列优化-SPFA"><a href="#二，bellManFord的队列优化-SPFA" class="headerlink" title="二，bellManFord的队列优化(SPFA)"></a>二，bellManFord的队列优化(SPFA)</h1><p>​    我们可以发现，对于bmf的松弛操作一定是上次松弛后才会进行松弛，我们可以将需要松弛的点存在队列中，同样我们可以对于求负环的操作进行优化，如果松弛了n次及以上，就说明存在负环，因为如果不存在负环一个点最多进行n-1次松弛操作。</p>
-<h4 id="注意是记录入队次数，而不是松弛次数，在特殊图有环-非负环-中可能存在n次及以上次松弛。"><a href="#注意是记录入队次数，而不是松弛次数，在特殊图有环-非负环-中可能存在n次及以上次松弛。" class="headerlink" title="注意是记录入队次数，而不是松弛次数，在特殊图有环(非负环)中可能存在n次及以上次松弛。"></a>注意是记录入队次数，而不是松弛次数，在特殊图有环(非负环)中可能存在n次及以上次松弛。</h4><p>spfa Code</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">for( int k = 1 ; k &lt;= n ; k++ ) vis[ k ] = 0 , cnt[ k ] = 0 , dis[ k ] = INF</span><br><span class="line">queue&lt;int&gt; q;</span><br><span class="line">   q.push( 1 );</span><br><span class="line">   cnt[ 1 ]++;</span><br><span class="line">   vis[ 1 ] = 1;</span><br><span class="line"></span><br><span class="line">   while( q.size() )</span><br><span class="line">   &#123;</span><br><span class="line"></span><br><span class="line">       int now = q.front();q.pop();</span><br><span class="line">       vis[ now ] = 0;</span><br><span class="line"></span><br><span class="line">       for ( auto k : roads[ now ] )</span><br><span class="line">       &#123;</span><br><span class="line"></span><br><span class="line">           if ( dis[ k.x ] &gt; dis[ now ] + k.y )</span><br><span class="line">           &#123;</span><br><span class="line">               dis[ k.x ] = dis[ now ] + k.y;</span><br><span class="line">               if ( vis[ k.x ] ) continue;</span><br><span class="line">               vis[ k.x ] = 1;</span><br><span class="line">               q.push( k.x );</span><br><span class="line">               cnt[ k.x ]++;</span><br><span class="line">               if ( cnt[ k.x ] &gt;= n ) return 1;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
+    <h1 id="一，BellManFord算法"><a href="#一，BellManFord算法" class="headerlink" title="一，BellManFord算法"></a>一，BellManFord算法</h1>
+    
+    <a class="article-more-a" href="/2022/07/28/SPFA%E4%B8%8EbellmanFord%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E8%BF%90%E7%94%A8/#more">more >></a>
+    
     
 
     
@@ -1220,11 +1208,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
+                <a href="javascript:void(0)" class="js-tag color5">shortpath</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">shortpath</a>
+                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1236,11 +1224,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">倍增</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">倍增</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一，BellManFord算法对于bellmanFord，是通过n-1次松弛来完成寻找最短路的，因为运用边数最多为n-1条。所以我们通过这个性质求最多运用k次的最短路或者正好利用k条边的最短路。 基本最短路123456for ( int k &#x3D; 1 ; k &lt; n ; k++ )       for ( int i &#x3D; 0 ; i &lt; m ;i++ )       &amp;#123;">
+  <meta name="description" content="一，BellManFord算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SPFA与bellmanFord的理解与运用">
 <meta property="og:url" content="https://cqupthaopp.github.io/2022/07/28/SPFA%E4%B8%8EbellmanFord%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E8%BF%90%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hao_pp的博客">
-<meta property="og:description" content="一，BellManFord算法对于bellmanFord，是通过n-1次松弛来完成寻找最短路的，因为运用边数最多为n-1条。所以我们通过这个性质求最多运用k次的最短路或者正好利用k条边的最短路。 基本最短路123456for ( int k &#x3D; 1 ; k &lt; n ; k++ )       for ( int i &#x3D; 0 ; i &lt; m ;i++ )       &amp;#123;">
+<meta property="og:description" content="一，BellManFord算法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-28T10:15:11.000Z">
-<meta property="article:modified_time" content="2022-07-28T13:30:32.746Z">
+<meta property="article:modified_time" content="2022-07-29T00:41:45.551Z">
 <meta property="article:author" content="Hao_pp">
 <meta property="article:tag" content="shortpath">
 <meta name="twitter:card" content="summary">
@@ -236,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">576字</span>
+      <span class="post-count">577字</span>
     </span>
   </span>
 
@@ -256,9 +256,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <span id="more"></span>
+    <h1 id="一，BellManFord算法"><a href="#一，BellManFord算法" class="headerlink" title="一，BellManFord算法"></a>一，BellManFord算法</h1><span id="more"></span>
 
-<h1 id="一，BellManFord算法"><a href="#一，BellManFord算法" class="headerlink" title="一，BellManFord算法"></a>一，BellManFord算法</h1><p>对于bellmanFord，是通过n-1次松弛来完成寻找最短路的，因为运用边数最多为n-1条。所以我们通过这个性质求最多运用k次的最短路或者正好利用k条边的最短路。</p>
+<p>对于bellmanFord，是通过n-1次松弛来完成寻找最短路的，因为运用边数最多为n-1条。所以我们通过这个性质求最多运用k次的最短路或者正好利用k条边的最短路。</p>
 <h4 id="基本最短路"><a href="#基本最短路" class="headerlink" title="基本最短路"></a>基本最短路</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt; n ; k++ )</span><br><span class="line">       <span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; m ;i++ )</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> ( dis[ roads[ i ].x.x ] &lt; INF ) dis[ roads[ i ].x.y ] = <span class="built_in">min</span>( dis[ roads[ i ].x.y ] , dis[ roads[ i ].x.x ] + roads[ i ].y  );<span class="comment">//松弛</span></span><br><span class="line"></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="最多k条边的问题"><a href="#最多k条边的问题" class="headerlink" title="最多k条边的问题"></a>最多k条边的问题</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> k = <span class="number">1</span> ; k &lt;= lim ; k++ )</span><br><span class="line">&#123;</span><br><span class="line">		<span class="built_in">memset</span>( back , dis , <span class="keyword">sizeof</span> back );</span><br><span class="line">		<span class="comment">//拷贝上一次的松弛结果，这样保证运用到的边数不超过限制次数</span></span><br><span class="line">       <span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span> ; i &lt; m ;i++ )</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> ( dis[ roads[ i ].x.x ] &lt; INF ) dis[ roads[ i ].x.y ] = <span class="built_in">min</span>( dis[ roads[ i ].x.y ] , back[ roads[ i ].x.x ] + roads[ i ].y  );<span class="comment">//利用back松弛</span></span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -563,11 +563,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
+                <a href="javascript:void(0)" class="js-tag color5">shortpath</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">shortpath</a>
+                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,11 +579,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">倍增</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">倍增</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
